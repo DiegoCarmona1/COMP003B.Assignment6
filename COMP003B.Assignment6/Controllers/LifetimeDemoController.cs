@@ -25,6 +25,13 @@ namespace COMP003B.Assignment6.Controllers
 
         public IActionResult Index()
         {
+            ViewData["TransientId1"] = _transientService1.GetUniqueId();
+            ViewData["TransientId2"] = _transientService2.GetUniqueId();
+            ViewData["ScopedId1"] = _scopedService1.GetUniqueId();
+            ViewData["ScopedId2"] = _scopedService2.GetUniqueId();
+            ViewData["SingletonId1"] = _singletonService1.GetUniqueId();
+            ViewData["SingletonId2"] = _singletonService2.GetUniqueId();
+
             return View();
         }
     }
