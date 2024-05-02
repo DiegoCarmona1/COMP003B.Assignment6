@@ -2,11 +2,17 @@
 
 namespace COMP003B.Assignment6.Services
 {
-    public class MyScopedService : Controller
+    public class MyScopedService 
     {
-        public IActionResult Index()
+        private readonly Guid _uniqueId;
+        public MyScopedService()
         {
-            return View();
+            _uniqueId = Guid.NewGuid();
+        }
+
+        public Guid GetUniqueId()
+        {
+            return _uniqueId;
         }
     }
 }
